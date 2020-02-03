@@ -14,11 +14,6 @@ public abstract class BasePage {
     return WebDriverRunner.getWebDriver().getCurrentUrl().contains(Environment.getCurrentEnvironment().getUrl());
   }
 
-  public static void openDns(){
-    System.out.println(Environment.getCurrentEnvironment().getUrl());
-    WebDriverRunner.getWebDriver().get(Environment.getCurrentEnvironment().getUrl());
-  }
-
   public abstract void shouldBeShown();
 
   public static void sleep(int seconds) {

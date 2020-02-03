@@ -1,6 +1,7 @@
 package uitests.pages.components;
 
 import com.codeborne.selenide.Condition;
+import lombok.Getter;
 import org.openqa.selenium.By;
 import uitests.model.DisplayAble;
 
@@ -8,28 +9,29 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class Footer implements DisplayAble<Footer> {
 
-  public static final String BASE_FOOTER_XPATH = "//footer";
-  public static final By dnsLink = By.xpath(BASE_FOOTER_XPATH + "//child::a[@class='main-footer__sites-link main-footer__sites-link--dns']");
-  public static final By technoPointLink = By.xpath(BASE_FOOTER_XPATH + "//child::a[@class='main-footer__sites-link main-footer__sites-link--tp']");
-  public static final By serviceLink = By.xpath(BASE_FOOTER_XPATH + "//child::a[@class='main-footer__sites-link main-footer__sites-link--service']");
-  public static final By clubLink = By.xpath(BASE_FOOTER_XPATH + "//child::a[@class='main-footer__sites-link main-footer__sites-link--club']");
+  private static final String BASE_FOOTER_XPATH = "//footer";
+  @Getter
+  private static final By dnsLinkXpath = By.xpath(BASE_FOOTER_XPATH + "//child::a[@class='main-footer__sites-link main-footer__sites-link--dns']");
+  private static final By technoPointLinkXpath = By.xpath(BASE_FOOTER_XPATH + "//child::a[@class='main-footer__sites-link main-footer__sites-link--tp']");
+  private static final By serviceLinkXpath = By.xpath(BASE_FOOTER_XPATH + "//child::a[@class='main-footer__sites-link main-footer__sites-link--service']");
+  private static final By clubLinkXpath = By.xpath(BASE_FOOTER_XPATH + "//child::a[@class='main-footer__sites-link main-footer__sites-link--club']");
 
 
   @Override
   public Footer shouldBeVisible() {
-    $(dnsLink).shouldBe(Condition.visible);
-    $(technoPointLink).shouldBe(Condition.visible);
-    $(serviceLink).shouldBe(Condition.visible);
-    $(clubLink).shouldBe(Condition.visible);
+    $(dnsLinkXpath).shouldBe(Condition.visible);
+    $(technoPointLinkXpath).shouldBe(Condition.visible);
+    $(serviceLinkXpath).shouldBe(Condition.visible);
+    $(clubLinkXpath).shouldBe(Condition.visible);
     return this;
   }
 
   @Override
   public Footer shouldNotBeVisible() {
-    $(dnsLink).shouldBe(Condition.hidden);
-    $(technoPointLink).shouldBe(Condition.hidden);
-    $(serviceLink).shouldBe(Condition.hidden);
-    $(clubLink).shouldBe(Condition.hidden);
+    $(dnsLinkXpath).shouldBe(Condition.hidden);
+    $(technoPointLinkXpath).shouldBe(Condition.hidden);
+    $(serviceLinkXpath).shouldBe(Condition.hidden);
+    $(clubLinkXpath).shouldBe(Condition.hidden);
     return this;
   }
 }

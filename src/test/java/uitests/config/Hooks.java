@@ -5,10 +5,6 @@ import com.codeborne.selenide.WebDriverRunner;
 import config.WebDriverFactory;
 import config.browser.Browsers;
 import lombok.val;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import uitests.pages.CommonSteps;
 import utils.Logger;
 
 import java.util.List;
@@ -22,7 +18,6 @@ public class Hooks {
   private static final String HEADLESS_ENV_PROPERTY = "headless";
   private static final Properties properties = new Properties();
 
-  @BeforeSuite
   public void prepareStage(){
     startUpBrowser();
   }
